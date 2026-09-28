@@ -44,15 +44,15 @@ function MangaDetail() {
   }
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="p-4 sm:p-6 max-w-4xl mx-auto">
       <div className="flex gap-6 flex-col sm:flex-row">
-        <img src={getCoverUrl(manga)} alt={getTitle(manga)} className="w-48 rounded-lg self-start" />
+        <img src={getCoverUrl(manga)} alt={getTitle(manga)} className="w-40 sm:w-48 rounded-lg self-center sm:self-start"/>
         <div className="flex-1">
-          <div className="flex items-center justify-between gap-4">
-            <h1 className="text-2xl font-bold mb-2">{getTitle(manga)}</h1>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 mb-2">
+            <h1 className="text-xl sm:text-2xl font-bold">
             <button
               onClick={handleFavorite}
-              className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${
+              className={\self-start px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap ${`
                 fav ? 'bg-purple-600 hover:bg-purple-700' : 'bg-neutral-800 hover:bg-neutral-700'
               }`}
             >
@@ -94,7 +94,7 @@ function MangaDetail() {
             <Link
               to={`/read/${ch.id}`}
               key={ch.id}
-              className={`bg-neutral-900 hover:bg-neutral-800 border rounded-lg px-4 py-3 flex justify-between ${
+              className={`bg-neutral-900 hover:bg-neutral-800 border rounded-lg px-4 py-3 flex justify-between gap-3 ${
                 isCurrent ? 'border-purple-500' : 'border-neutral-800'
               } ${isRead ? 'opacity-50' : ''}`}
             >
@@ -105,7 +105,8 @@ function MangaDetail() {
                   <span className="ml-2 text-xs text-purple-400">(pág. {progress.page || 1})</span>
                 )}
               </span>
-              <span className="text-neutral-500 text-sm uppercase">{ch.attributes.translatedLanguage}</span>
+            
+              <span className="text-neutral-500 text-sm uppercase shrink-0">{ch.attributes.translatedLanguage}</span>
             </Link>
           )
         })}
