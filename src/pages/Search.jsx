@@ -33,13 +33,13 @@ function Search() {
 
   return (
     <div className="p-6">
-      <form onSubmit={handleSearch} className="flex gap-2 mb-4">
+      <form onSubmit={handleSearch} className="flex flex-wrap gap-2 mb-4">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Buscar manga..."
-          className="flex-1 bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2 focus:outline-none focus:border-purple-500"
+          className="flex-1 min-w-0  bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-2 focus:outline-none focus:border-purple-500"
         />
         <button
           type="button"
