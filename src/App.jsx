@@ -9,12 +9,12 @@ import History from './pages/History'
 
 function App() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
-      <nav className="flex items-center justify-between px-6 py-4 bg-neutral-900 border-b border-neutral-800">
+    <div className="min-h-screen bg-neutral-950 text-white overflow-x-hidden">
+      <nav className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 sm:px-6 py-3 sm:py-4 bg-neutral-900 border-b border-neutral-800">
         <Link to="/" className="text-xl font-bold text-purple-500">
           MangaReader
         </Link>
-        <div className="flex gap-4 text-sm">
+        <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
           <Link to="/directory" className="text-neutral-300 hover:text-purple-400">Directorio</Link>
           <Link to="/history" className="text-neutral-300 hover:text-purple-400">Historial</Link>
           <Link to="/favorites" className="text-neutral-300 hover:text-purple-400">Favoritos</Link>
